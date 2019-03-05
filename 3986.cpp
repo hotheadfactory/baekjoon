@@ -1,3 +1,4 @@
+// https://www.acmicpc.net/problem/3986 Baekjoon No.3986 좋은 단어
 #include <stdio.h>
 #include <string.h>
 #include <stack>
