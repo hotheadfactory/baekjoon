@@ -4,9 +4,9 @@
 #include <algorithm>
 using namespace std;
 
-int dp[501][501];
-int cost[501];
-int sum[501];
+int dp[501][501]; //다디내믹 프로그래밍을 위한 2차원 배열
+int cost[501]; //각 번호의 숫자
+int sum[501]; //n번까지의 총합
 int t, k, i;
 
 int dpf(int tx, int ty) {
@@ -23,8 +23,8 @@ int dpf(int tx, int ty) {
         int left = dpf(tx, mid);
         int right = dpf(mid + 1, ty);
         dp[tx][ty] = min(dp[tx][ty], left + right);
+        //현재 저장된 값과 left+right를 더한 새 값 중 작은 것을 사용
     }
-
     return dp[tx][ty] += sum[ty] - sum[tx - 1];
 }
 
